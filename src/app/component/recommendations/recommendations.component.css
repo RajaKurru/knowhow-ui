@@ -361,7 +361,7 @@
   color: #fbcf5f;
 }
 .low-icon {
-  color: #15ba40;
+  color: #49535e;
 }
 .top-recommendation-header {
   display: flex;
@@ -470,6 +470,9 @@
   white-space: normal;
   word-break: break-word;
   overflow-wrap: break-word;
+  border: 1px solid #ececec;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .recommendation-content {

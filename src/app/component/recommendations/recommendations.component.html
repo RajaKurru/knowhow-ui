@@ -297,6 +297,12 @@
         <h2 class="p-mt-0">
           AI Nudges
          <span> <i class="pi pi-sparkles" style="font-size: 2rem"></i> </span>
+         <i
+           class="pi pi-exclamation-circle info-icon"
+           style="font-size: 1.5rem; margin-left: 27px; cursor: pointer;"
+           pTooltip="Link strength indicates the correlation level between KPIs, from 0 (none) to 1 (perfect)"
+           tooltipPosition="top" 
+          ></i>
         </h2>
       
         <section class="recommendation-box-main">
@@ -328,7 +334,7 @@
                     </div>
                     </div>
                     <div class="arrow-wrapper">
-                     <i class="recommendation-content-arrow pi pi-arrow-right"  [ngClass]="getSeverityClass(recommendation)" pTooltip="Dependency Co-efficient" tooltipPosition="top"
+                     <i class="recommendation-content-arrow pi pi-arrow-right"  [ngClass]="getSeverityClass(recommendation)" pTooltip="Dependency Co&#8209;efficient" tooltipPosition="top"
                        [style.right]="0" [style.bottom]="0"
                       [style.margin]="'12px'"></i>
                       </div>

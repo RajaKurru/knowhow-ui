@@ -717,7 +717,7 @@ export class RecommendationsComponent implements OnInit {
           color: '#fff',
         };
       case 'low':
-        return { 'background-color': '#15ba40', color: 'fff#' };
+        return { 'background-color': '#49535e', color: 'fff#' };
       case 'critical':
         return { 'background-color': '#fe414d', color: '#fff' };
       default:
