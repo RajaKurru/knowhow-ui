@@ -37,6 +37,32 @@ export class ConditionalInputV2Component implements OnChanges {
       this.templateLabels = this.templateLabelToLowercase(
         this.valueObj.map((val) => val.label),
       );
+
+      if (
+        Array.isArray(this.fieldConfig?.options) &&
+        Array.isArray(this.valueObj)
+      ) {
+        this.fieldConfig.options.forEach((x) => {
+          if (!x || !x.label) return;
+
+          const matched = this.valueObj.find(
+            (y) => y && y.label && y.label === x.label,
+          );
+
+          if (matched) {
+            try {
+              x.structuredValue =
+                matched.structuredValue !== undefined &&
+                matched.structuredValue !== null
+                  ? JSON.parse(JSON.stringify(matched.structuredValue))
+                  : null;
+            } catch (e) {
+              x.structuredValue = matched.structuredValue ?? null;
+            }
+          }
+        });
+      }
+
       this.templateData = this.fieldConfig.options
         .map((opt) => {
           opt.selected = this.templateLabels.includes(opt.label);
@@ -106,5 +132,6 @@ export class ConditionalInputV2Component implements OnChanges {
     event.stopPropagation();
     option.structuredValue.timeUnit = item.name;
     option.show = false;
+    this.setOutput();
   }
 }

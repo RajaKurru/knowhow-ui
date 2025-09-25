@@ -45,7 +45,7 @@
             'Selected item ' + (i + 1) + ': ' + option.label
           "
           tabindex="0">
-          <ng-container *ngIf="option.structuredValue.sla">
+          <ng-container *ngIf="option?.structuredValue?.sla">
             {{
               option.label +
                 ' ' +
